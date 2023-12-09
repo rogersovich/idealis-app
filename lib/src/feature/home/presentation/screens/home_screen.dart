@@ -3,12 +3,19 @@ import 'package:idealis_app/size_config.dart';
 import 'package:idealis_app/src/core/constant/color_constant.dart';
 import 'package:idealis_app/src/core/utils/image_util.dart';
 import 'package:idealis_app/src/core/utils/text_util.dart';
+import 'package:idealis_app/src/feature/introduction/presentation/widgets/introduction_screen.dart';
 
 // ignore: constant_identifier_names
 enum MenuItemType { NEW, LOCKED, DEFAULT, SOON }
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
+
+   void _navigateToOnBoarding(context) {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (_) => const OnBoardingPage()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +26,7 @@ class HomePage extends StatelessWidget {
               color: kBlackColor, fontSize: 9, weight: 'w600'),
           leading: IconButton(
             icon: const Icon(Icons.home),
-            onPressed: () {},
+            onPressed: () => _navigateToOnBoarding(context),
           ),
           actions: [
             IconButton(
@@ -86,7 +93,7 @@ class HomePage extends StatelessWidget {
                   child: buildTextCustom(context, "Layanan Kami",
                       weight: 'w600', fontSize: 8),
                 ),
-                SizedBox(height: getProportionateScreenHeight(context, 10)),
+                SizedBox(height: getProportionateScreenHeight(context, 14)),
                 //todo Grid Menu
                 GridView.count(
                   shrinkWrap: true,
@@ -161,13 +168,13 @@ class HomePage extends StatelessWidget {
     // Set the color based on the type
     switch (type) {
       case MenuItemType.NEW:
-        iconOffset = const Offset(16.0, -14.0);
+        iconOffset = const Offset(16.0, -10.0);
         iconIndicator = Container(
             padding: EdgeInsets.all(getProportionateScreenWidth(context, 4)),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(2), color: kSecondaryColor),
             child: buildTextCustom(context, "NEW",
-                color: kWhiteColor, weight: 'w600', fontSize: 6));
+                color: kWhiteColor, weight: 'w600', fontSize: 4));
         break;
       case MenuItemType.LOCKED:
         iconOffset = const Offset(12.0, -12.0);

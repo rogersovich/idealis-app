@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:idealis_app/size_config.dart';
 import 'package:idealis_app/src/core/constant/color_constant.dart';
 import 'package:idealis_app/src/feature/home/presentation/screens/home_screen.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -25,20 +26,20 @@ class OnBoardingPageState extends State<OnBoardingPage> {
 
   @override
   Widget build(BuildContext context) {
-    const bodyStyle = TextStyle(fontSize: 16.0);
+    final bodyStyle = TextStyle(fontSize: getProportionateScreenHeight(context, 7));
 
     final pageDecoration = PageDecoration(
       titleTextStyle: TextStyle(
-          fontSize: 28.0,
+          fontSize: getProportionateScreenHeight(context, 12),
           fontWeight: FontWeight.w700,
           color: kPrimaryColor),
       pageColor: Colors.white,
       bodyTextStyle: bodyStyle,
       bodyPadding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      bodyAlignment: Alignment.topCenter,
+      bodyAlignment: Alignment.center,
       imageAlignment: Alignment.bottomCenter,
       imagePadding: const EdgeInsets.only(bottom: 0),
-      bodyFlex: 1,
+      bodyFlex: 0,
       imageFlex: 2,
       footerFlex: 0,
     );
@@ -49,7 +50,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
           title: "Fractional shares",
           body:
               "Instead of having to buy an entire share, invest any amount you want.",
-          image: _buildImage('illus_4.png'),
+          image: _buildImage('illus_4.png', 270),
           decoration: pageDecoration,
         ),
         PageViewModel(
@@ -80,7 +81,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
                   elevation: 0),
               child: const Text(
                 "Let's Go!",
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w800),
+                style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w600),
               ),
             ),
           ),
@@ -93,7 +94,6 @@ class OnBoardingPageState extends State<OnBoardingPage> {
       showBackButton: false,
       showNextButton: false,
       showDoneButton: false,
-      curve: Curves.fastLinearToSlowEaseIn,
       globalBackgroundColor: Colors.white,
       controlsPadding: const EdgeInsets.only(bottom: 30),
       dotsDecorator:  DotsDecorator(
