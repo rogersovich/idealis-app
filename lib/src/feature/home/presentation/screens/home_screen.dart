@@ -11,7 +11,7 @@ enum MenuItemType { NEW, LOCKED, DEFAULT, SOON }
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-   void _navigateToOnBoarding(context) {
+  void _navigateToOnBoarding(context) {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (_) => const OnBoardingPage()),
     );
