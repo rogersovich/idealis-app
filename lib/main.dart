@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: Routes.home, //? Set the initial route
       onGenerateRoute: Routes.generateRoute, //? Use the generateRoute function from routes.dart
+      debugShowCheckedModeBanner: true,
     );
   }
 }

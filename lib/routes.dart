@@ -10,9 +10,9 @@ class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case introduction:
-        return MaterialPageRoute(builder: (_) => const IntroductionScreen());
+        return MaterialPageRoute(builder: (_) => const OnBoardingPage ());
       case home:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        return MaterialPageRoute(builder: (_) => const HomePage());
       default:
         throw const FormatException('Route not found! Check routes again.');
     }
