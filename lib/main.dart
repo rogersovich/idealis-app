@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: Routes.home, //? Set the initial route
+      initialRoute: Routes.introduction, //? Set the initial route
       onGenerateRoute: Routes.generateRoute, //? Use the generateRoute function from routes.dart
       debugShowCheckedModeBanner: true,
     );

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:idealis_app/src/feature/home/presentation/screens/home_screen.dart';
-// import 'package:idealis_app/routes.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class OnBoardingPage extends StatefulWidget {
@@ -8,26 +7,6 @@ class OnBoardingPage extends StatefulWidget {
 
   @override
   OnBoardingPageState createState() => OnBoardingPageState();
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     appBar: AppBar(title: const Text('Introduction Page')),
-  //     body: Center(
-  //       child: Row(
-  //         mainAxisAlignment: MainAxisAlignment.center,
-  //         children: [
-  //           ElevatedButton(
-  //             onPressed: () {
-  //               Navigator.pushNamed(context, Routes.home);
-  //             },
-  //             child: const Text('Go to Details'),
-  //           )
-  //         ],
-  //       ),
-  //     ),
-  //   );
-  // }
 }
 
 class OnBoardingPageState extends State<OnBoardingPage> {
