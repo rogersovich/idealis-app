@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:idealis_app/src/core/constant/color_constant.dart';
 import 'package:idealis_app/src/feature/home/presentation/screens/home_screen.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -26,17 +27,17 @@ class OnBoardingPageState extends State<OnBoardingPage> {
   Widget build(BuildContext context) {
     const bodyStyle = TextStyle(fontSize: 16.0);
 
-    const pageDecoration = PageDecoration(
+    final pageDecoration = PageDecoration(
       titleTextStyle: TextStyle(
           fontSize: 28.0,
           fontWeight: FontWeight.w700,
-          color: Color(0xff2483fb)),
+          color: kPrimaryColor),
       pageColor: Colors.white,
       bodyTextStyle: bodyStyle,
-      bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
+      bodyPadding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
       bodyAlignment: Alignment.topCenter,
       imageAlignment: Alignment.bottomCenter,
-      imagePadding: EdgeInsets.only(bottom: 0),
+      imagePadding: const EdgeInsets.only(bottom: 0),
       bodyFlex: 1,
       imageFlex: 2,
       footerFlex: 0,
@@ -68,7 +69,19 @@ class OnBoardingPageState extends State<OnBoardingPage> {
             padding: const EdgeInsets.all(20),
             child: ElevatedButton(
               onPressed: () => _onIntroEnd(context),
-              child: const Text("Let's Go!"),
+              style: ElevatedButton.styleFrom(
+                  foregroundColor: kPrimaryColor,
+                  backgroundColor: kPrimaryColor.withOpacity(
+                      0.1), // This is the color of the text and icons
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        4), // Set the border radius to 0 for no border
+                  ),
+                  elevation: 0),
+              child: const Text(
+                "Let's Go!",
+                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w800),
+              ),
             ),
           ),
         )
@@ -83,12 +96,12 @@ class OnBoardingPageState extends State<OnBoardingPage> {
       curve: Curves.fastLinearToSlowEaseIn,
       globalBackgroundColor: Colors.white,
       controlsPadding: const EdgeInsets.only(bottom: 30),
-      dotsDecorator: const DotsDecorator(
-        size: Size(10.0, 10.0),
-        color: Color(0xFFBDBDBD),
-        activeColor: Color(0xff2483fb),
-        activeSize: Size(28.0, 10.0),
-        activeShape: RoundedRectangleBorder(
+      dotsDecorator:  DotsDecorator(
+        size: const Size(10.0, 10.0),
+        color: kGrayColor,
+        activeColor: kPrimaryColor,
+        activeSize: const Size(28.0, 10.0),
+        activeShape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(25.0)),
         ),
       ),
